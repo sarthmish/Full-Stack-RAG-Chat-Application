@@ -1,0 +1,133 @@
+# RAG Chat Interface
+
+
+
+A retrieval-augmented generation (RAG) chat interface that allows users to upload PDF documents and ask questions about their content. The system uses advanced LLMs and vector search to provide accurate, context-aware responses.
+
+
+
+## Features
+
+
+
+- PDF document upload and processing
+
+- Document selection for RAG context
+
+- Interactive chat interface
+
+- Real-time document relevance checking
+
+- Hallucination detection
+
+- Query reformulation
+
+
+
+## Prerequisites
+
+
+
+- Make sure CUDA is working on your system. This requires the installation of the appropriate CUDA Toolkit Installation. (in our case 12.8)
+
+
+
+### Settin up Environment
+
+```bash
+
+
+
+   - conda env create -f environment.yml
+
+   - pip install --force-reinstall --no-cache-dir -r requirements.txt
+
+   - pip install https://download.pytorch.org/whl/cu128/torch-2.7.0%2Bcu128-cp311-cp311-win_amd64.whl#sha256=bf88f647d76d79da9556ca55df49e45aff1d66c12797886364343179dd09a36c
+
+   - pip install https://download.pytorch.org/whl/cu128/torchvision-0.22.0%2Bcu128-cp311-cp311-win_amd64.whl#sha256=f5dae1307c34813425c0b753530c035e1cc72af0bded395d1ba64dcb2872889f
+
+
+
+
+
+```
+
+
+
+2. Configure Azure OpenAI access:
+
+- Setup the config.toml file with your own API key
+
+- Use proxy if the API calls are not going through
+
+
+
+
+
+
+
+## Usage
+
+
+
+1. Start the application:
+
+```bash
+
+python ui.py
+
+```
+
+2. Access the interface at the link in the terminal
+
+3. Upload PDF documents using the file upload panel
+
+4. Select documents to include in the RAG context
+
+5. Start a RAG session
+
+6. Ask questions in the chat interface
+
+
+
+## Input/Output Specifications
+
+
+
+### Inputs
+
+
+
+- PDF documents (.pdf files only)
+
+- Natural language questions through chat interface
+
+
+
+### Outputs
+
+
+
+- Processed document JSONs (stored in data_store/)
+
+- Natural language responses based on document context
+
+- System status messages
+
+
+
+
+
+## Contributing
+
+
+
+Please submit issues and pull requests to improve the system.
+
+
+
+## License
+
+
+
+This project is licensed under the MIT License.

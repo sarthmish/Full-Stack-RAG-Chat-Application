@@ -1,0 +1,49 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "default": {
+            "format": "[%(asctime)s] (%(module)s@%(funcName)s@%(lineno)d) %(levelname)s - %(message)s"
+        }
+    },
+    "filters": {
+        "warnings_and_below": {
+            "()": "rag_logger.StdOutLevelFilter",
+            "level": "WARNING"
+        }
+    },
+    "handlers": {
+        "stdout": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "default",
+            "stream": "ext://sys.stdout",
+            "filters": [
+                "warnings_and_below"
+            ]
+        },
+        "stderr": {
+            "class": "logging.StreamHandler",
+            "level": "ERROR",
+            "formatter": "default",
+            "stream": "ext://sys.stderr"
+        },
+        "file": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "default",
+            "filename": "logs/rag.log",
+            "mode": "w"
+        }
+    },
+    "loggers": {
+        "root": {
+            "level": "DEBUG",
+            "handlers": [
+                "stdout",
+                "stderr",
+                "file"
+            ]
+        }
+    }
+}

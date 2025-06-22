@@ -1,0 +1,53 @@
+DOCLING_ARTIFACTS_PATH  = 'your path'
+
+DEFAULT_VLM_ENDPOINT    = 'http://localhost:11434/v1/chat/completions'
+
+DEFAULT_IMAGE_SCALE     = 2.0
+
+
+
+[DOCLING_OPTIONS]
+
+do_ocr                      = true # No need of OCR if the files are digital only - no scanned pages
+
+do_table_structure          = true # Turn off if document does not have any tables
+
+do_cell_matching            = true
+
+generate_page_images        = true
+
+generate_picture_images     = true
+
+do_picture_classification   = true
+
+do_picture_description      = true
+
+save_visual_grounding       = true
+
+vlm_model                   = 'qwen2.5vl:7b'
+
+vlm_prompt                  = 'Describe the image in detail without leaving out any information. ONLY use the information given as input and DO NOT add any of your own information.'
+
+
+
+[LLM]
+
+azure_deployment    = 'your-openai-gpt-4o-mini-2024-07-18'
+
+azure_endpoint      = 'https://yourendpoint.com/api'
+
+openai_api_type     = 'azure'
+
+openai_api_version  = '2024-08-01-preview'
+
+model               = 'gpt-4o-mini'
+
+key                 = 'your key'
+
+
+
+
+
+[EMBEDDING_MODEL]
+
+model_path = 'your path'
